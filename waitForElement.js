@@ -1,9 +1,9 @@
 const waitForElement = (element) => {
     return new Promise((res, err) => {
         const check = setInterval(() => {
-            if(document.querySelectorAll(element).length !== 0) {
+            if(document.querySelector(element) !== null) {
                 clearInterval(check);
-                res(document.querySelectorAll(element));
+                res(document.querySelector(element));
             }
         }, 300)
     })
